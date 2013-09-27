@@ -47,7 +47,7 @@ for (var i = 0; i < radar_data.length; i++) {
     .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1];                                 
                           console.log("name:" + d.name + ", y:" + y); 
                           return y;})
-    .title(function(d) { return ( d.note !== undefined ? d.note : d.title );})		 
+    .title(function(d) { return d.name;})		 
     .cursor( function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })                                                            
     .event("click", function(d) { if ( d.url !== undefined ){self.location =  d.url}}) 
     .angle(45)
@@ -80,33 +80,14 @@ for (var i = 0; i < radar_data.length; i++) {
             .cursor( function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })                                                            
             .event("click", function(d) { if ( d.url !== undefined ){self.location =  d.url}}) 
             .size(15) 
-            .angle(45)
-            .title(function(d) { return ( d.note !== undefined ? d.note : d.title );})           
+            .angle(45)            
             .anchor("right")                
-                .add(pv.Label) 
+                .add(pv.Label)                
                 .text(function(d) {return radar_quadrant_ctr++ + ". " + d.name;} )
                 .font("12px ProximaNova-Light");
 }      
        
  radar.anchor('radar');
  radar.render();
-
- $('[title!=""]').qtip({
-    prerender: true,
-    style: {
-        classes: 'qtip-light ProximaNova-Light'
-    },
-    hide: {
-        fixed: true,
-        delay: 1000
-    },
-    title: $('.qtip-title'),
-    position: {
-        my: 'left bottom',
-        adjust: {
-            x: 10
-        }
-    }
-  });
      
   };

@@ -1,0 +1,8 @@
+Make ember app with rails API backend.
+Put Google Apps authentication on.
+Wire techradar visualization to DB records rather than hardcoded js.
+Port to D3 
+- http://kreese.net/blog/2012/08/26/d3-js-creating-a-polar-area-diagram-radial-bar-chart/
+- http://mbostock.github.io/d3/tutorial/protovis.html
+Make each point clickable or mousable for more info.
+Deploy to heroku.
